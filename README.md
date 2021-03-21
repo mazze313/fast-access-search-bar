@@ -12,7 +12,7 @@ Provides custom search bar which can be accessed fast and offers reuse of previo
 **Note:** This plugin has only been tested with Firefox 86.0 (x64) on Ubuntu 20.04 LTS so far.  
         *Support of other browsers or operating systems is unknown.*
 
-You can also test the add-on temporarily by calling *about:debugging#/runtime/this-firefox* in a new firefox tab. Click *Load Temporary Add-on...* and open *maifest.json* of this plugin.
+You can also test the add-on temporarily by calling *about:debugging#/runtime/this-firefox* in a new firefox tab. Click *Load Temporary Add-on...* and open *manifest.json* of this plugin.
 
 ### Linux
 - Download code and create new *zip* file containing only the files of the sub-folder *fast-access-search-bar*.  
