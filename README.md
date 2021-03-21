@@ -21,7 +21,7 @@ Provides custom search bar which can be accessed fast and offers reuse of previo
 You can also test the add-on temporarily by calling *about:debugging#/runtime/this-firefox* in a new firefox tab. Click *Load Temporary Add-on...* and open *maifest.json* of this plugin.
 
 ## Usage
-- Open add-on with click on icon in navigation bar or using the shortcut **Ctrl + X**.  
+- Open add-on with click on icon in navigation bar or using the shortcut **Alt + Q**.  
   (you can change the shortcut in firefox via *Tools*/*Add-ons*/Settings Cogwheel/*Manage Extension Shortcut*).  
 - Enter search term and confirm (*Carriage Return* or *Enter*).  
   New searches are always opened in a new tab.
