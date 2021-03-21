@@ -1,9 +1,12 @@
+
 # Firefox-Add-on: Fast Access Search Bar
 
 ## Description
 Provides custom search bar which can be accessed fast and offers reuse of previous search term for other predefined search engines.
 
-<img src="https://user-images.githubusercontent.com/81079563/111910811-30335d00-8a63-11eb-86ba-0699b5d76619.png" width="300">
+<img src="https://user-images.githubusercontent.com/81079563/111913411-47c41300-8a6e-11eb-82c2-9524807dbcbc.png" width="500">
+
+---
 
 ## Install
 **Note:** This plugin has only been tested with Firefox 86.0 (x64) on Ubuntu 20.04 LTS so far.  
@@ -25,8 +28,7 @@ You can also test the add-on temporarily by calling *about:debugging#/runtime/th
 - Select other predefined search engine with left mouse click or simply use *arrow up* or *arrow down*.  
   Selection of search engine does not have to be confirmed and is automatically used. 
 
+---
+
 ## Add further search engines
 Open *fast-access-search-bar.js* and see description at line stating *ADD CUSTOM SEARCH ENGINE*.
-
---------
-
