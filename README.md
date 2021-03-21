@@ -3,6 +3,8 @@
 ## Description
 Provides custom search bar which can be accessed fast and offers reuse of previous search term for other predefined search engines.
 
+<img src="https://user-images.githubusercontent.com/81079563/111910811-30335d00-8a63-11eb-86ba-0699b5d76619.png" width="300">
+
 ## Install
 **Note:** This plugin has only been tested with Firefox 86.0 (x64) on Ubuntu 20.04 LTS so far.  
         *Support of other browsers or operating systems is unknown.*
