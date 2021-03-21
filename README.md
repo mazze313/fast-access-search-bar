@@ -11,7 +11,9 @@ Provides custom search bar which can be accessed fast and offers reuse of previo
 - Firefox: 
   - Open *about:config* in new tab and set option *xpinstall.signatures.required* to *false*.
   - Open *Tools*/*Add-ons* and click on cogwheel for further settings.   
-    Click *Install Add-on From File ...* and select previously created *zip* file of add-on.  
+    Click *Install Add-on From File...* and select previously created *zip* file of add-on.  
+
+You can also test the add-on temporarily by calling *about:debugging#/runtime/this-firefox* in a new firefox tab. Click *Load Temporary Add-on...* and open *maifest.json* of this plugin.
 
 ## Usage
 - Open add-on with click on icon in navigation bar or using the shortcut **Alt + Q**.  
