@@ -2,7 +2,7 @@
 # Firefox Add-on: Fast Access Search Bar
 
 ## Description
-Provides custom search bar which can be accessed fast and offers reuse of previous search term for other predefined search engines.
+Provides custom search bar, which can be accessed fast and offers reuse of previous search term for other predefined search engines.
 
 <img src="https://user-images.githubusercontent.com/81079563/111913411-47c41300-8a6e-11eb-82c2-9524807dbcbc.png" width="500">
 
@@ -23,7 +23,7 @@ You can also test the add-on temporarily by calling *about:debugging#/runtime/th
 
 ## Usage
 - Open add-on with click on icon in navigation bar or using the shortcut **Alt + Q**.  
-  (you can change the shortcut in firefox via *Tools*/*Add-ons*/Settings Cogwheel/*Manage Extension Shortcut*).  
+  (you can change the shortcut in Firefox via *Tools*/*Add-ons*/Settings Cogwheel/*Manage Extension Shortcut*).  
 - Enter search term and confirm (*Carriage Return* or *Enter*).  
   New searches are always opened in a new tab.
 - Select other predefined search engine with left mouse click or simply use *arrow up* or *arrow down*.  
