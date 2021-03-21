@@ -125,11 +125,31 @@ search_list.push(google_com_map);
 
 // DUCKDUCKGO
 var duckduck_com_map = new Map();
-duckduck_com_map.set("search_name",     "duckduckgo [com]");
-duckduck_com_map.set("search_url",      "https://duckduckgo.com/?q=%s");
-duckduck_com_map.set("icon_url",        "https://duckduckgo.com/assets/icons/meta/DDG-iOS-icon_152x152.png");
-duckduck_com_map.set("icon_overlay",    "");
+duckduck_com_map.set("search_name",   "duckduckgo [com]");
+duckduck_com_map.set("search_url",    "https://duckduckgo.com/?q=%s");
+duckduck_com_map.set("icon_url",      "https://duckduckgo.com/assets/icons/meta/DDG-iOS-icon_152x152.png");
+duckduck_com_map.set("icon_overlay",  "");
 search_list.push(duckduck_com_map);
+
+
+// METAL ARCHIVES
+var encymetal_com_map = new Map();
+encymetal_com_map.set("search_name",  "Encyclopaedia Metallum [com]");
+encymetal_com_map.set("search_url",   "https://www.metal-archives.com/search?searchString=%s&type=band_name");
+encymetal_com_map.set("icon_url",     "https://pbs.twimg.com/profile_images/926523450847461376/ctJy92Q9_400x400.jpg");
+encymetal_com_map.set("icon_overlay", "");
+search_list.push(encymetal_com_map);
+
+// METAL
+var metal_com_map = new Map();
+metal_com_map.set("search_name",      "Metal [de]");
+metal_com_map.set("search_url",       "https://www.metal-archives.com/search?searchString=%s&type=band_name");
+metal_com_map.set("icon_url",         "https://www.metal.de/apple-touch-icon.png");
+metal_com_map.set("icon_overlay",     "");
+search_list.push(metal_com_map);
+
+
+https://www.metal.de/suche/?q=
 
 /* ADD CUSTOM SEARCH ENGINE
 /// Replace <NEW> with an unique name of your new search engine.
