@@ -1,5 +1,5 @@
 
-# Firefox-Add-on: Fast Access Search Bar
+# Firefox Add-on: Fast Access Search Bar
 
 ## Description
 Provides custom search bar which can be accessed fast and offers reuse of previous search term for other predefined search engines.
