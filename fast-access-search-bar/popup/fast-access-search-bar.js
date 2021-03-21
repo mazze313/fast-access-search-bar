@@ -272,7 +272,6 @@ function global_onkeyup(event) {
 /// Listener
 document.onkeyup = global_onkeyup;
 
-
 /* ************************************************************************* */ 
 // Process search request on keypress in text input field
 
@@ -282,11 +281,15 @@ html_search_string.addEventListener("keyup", function(event) {
     if ((event.keyCode === 13) || (event.keyCode === 10)) {
         // Insert search term into search url of selected search and open search URL in new tab
         browser.tabs.create({ url: browser.runtime.getURL(search_url.replace("%s", html_search_string.value)) });
-        // Sore current search string in local storage
-        browser.storage.local.set({ "search_string" : { "value" : html_search_string.value }});
         // Close pop-up
         window.close();
     }
 });
 
+/// Listener
+html_search_string.addEventListener("change", function(event) {
+    browser.storage.local.set({ "search_string" : { "value" : html_search_string.value }});
+});
+
 /* ************************************************************************* */ 
+
