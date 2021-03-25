@@ -131,10 +131,9 @@ duckduck_com_map.set("icon_url",      "https://duckduckgo.com/assets/icons/meta/
 duckduck_com_map.set("icon_overlay",  "");
 search_list.push(duckduck_com_map);
 
-
 // METAL ARCHIVES
 var encymetal_com_map = new Map();
-encymetal_com_map.set("search_name",  "Encyclopaedia Metallum [com]");
+encymetal_com_map.set("search_name",  "encyclopaedia metallum [com]");
 encymetal_com_map.set("search_url",   "https://www.metal-archives.com/search?searchString=%s&type=band_name");
 encymetal_com_map.set("icon_url",     "https://pbs.twimg.com/profile_images/926523450847461376/ctJy92Q9_400x400.jpg");
 encymetal_com_map.set("icon_overlay", "");
@@ -142,14 +141,28 @@ search_list.push(encymetal_com_map);
 
 // METAL
 var metal_com_map = new Map();
-metal_com_map.set("search_name",      "Metal [de]");
-metal_com_map.set("search_url",       "https://www.metal-archives.com/search?searchString=%s&type=band_name");
+metal_com_map.set("search_name",      "metal [de]");
+metal_com_map.set("search_url",       "https://www.metal.de/suche/?q=%s");
 metal_com_map.set("icon_url",         "https://www.metal.de/apple-touch-icon.png");
 metal_com_map.set("icon_overlay",     "");
 search_list.push(metal_com_map);
 
+// CPLUSPLUS
+var cplusplus_com_map = new Map();
+cplusplus_com_map.set("search_name",  "cplusplus [com]");
+cplusplus_com_map.set("search_url",   "https://www.cplusplus.com/search.do?q=%s");
+cplusplus_com_map.set("icon_url",     "https://www.cplusplus.com/favicon.ico");
+cplusplus_com_map.set("icon_overlay", "");
+search_list.push(cplusplus_com_map);
 
-https://www.metal.de/suche/?q=
+// CPPREEFERENCE
+var cppref_com_map = new Map();
+cppref_com_map.set("search_name",     "cppreference [com]");
+cppref_com_map.set("search_url",      "https://duckduckgo.com/?sites=cppreference.com&q=%s");
+cppref_com_map.set("icon_url",        "https://en.cppreference.com/favicon.ico");
+cppref_com_map.set("icon_overlay",    "");
+search_list.push(cppref_com_map);
+
 
 /* ADD CUSTOM SEARCH ENGINE
 /// Replace <NEW> with an unique name of your new search engine.
@@ -164,6 +177,18 @@ var <NEW>_map = new Map();
 search_list.push(<NEW>_map);
 
 */
+
+var search_list_style = "height: %ipx;";
+var search_list_height =  22 * search_list.length;
+html_search_select.setAttribute("style", search_list_style.replace("%i", search_list_height.toString()));
+
+function set_search_input_focus() {
+    var len = html_search_string.value.length; 
+    if (html_search_string.setSelectionRange) { 
+        html_search_string.focus(); 
+        html_search_string.setSelectionRange(len, len); 
+    }  
+}
 
 /* ************************************************************************* */ 
 // Set search string input value
@@ -198,6 +223,7 @@ function apply_current_search(map) {
     html_search_icon.title  = map.get("search_name");
     html_search_icon.title  = map.get("search_name");
     html_overlay_text.textContent  = map.get("icon_overlay");
+    set_search_input_focus();
 }
 
 function get_current_search(item) {
@@ -256,13 +282,6 @@ function global_onkeydown(event) {
           html_search_select.selectedIndex = 0;
       }
       on_selection_change();
-
-      var len = html_search_string.value.length; 
-      if (html_search_string.setSelectionRange) { 
-          html_search_string.focus(); 
-          html_search_string.setSelectionRange(len, len); 
-      }
-
   }
   else if (event.keyCode === 38) { // Key: Up
     html_search_select.selectedIndex--;
@@ -271,10 +290,6 @@ function global_onkeydown(event) {
     }    
     on_selection_change();
   }
-
-  var len = 2* html_search_string.value.length;
-  html_search_string.value.focus(); 
-  html_search_string.value.setSelectionRange(len, len);  
 }
 /// Listener
 document.onkeydown = global_onkeydown;
@@ -282,11 +297,7 @@ document.onkeydown = global_onkeydown;
 function global_onkeyup(event) {
     // Force focus at end of input text when down key is pressed and focus is moved to beginning of line
     if (event.keyCode === 38) { // Key: Down
-        var len = html_search_string.value.length; 
-        if (html_search_string.setSelectionRange) { 
-            html_search_string.focus(); 
-            html_search_string.setSelectionRange(len, len); 
-        }
+        set_search_input_focus();
     }
 }
 /// Listener
