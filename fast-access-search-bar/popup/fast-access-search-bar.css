@@ -61,7 +61,7 @@ body {
   background:      rgb(44, 44, 44);
   color:           rgb(247, 247, 247);  
   width:             590px;
-  height:            375px;    
+  /*height:            0px; /* Dynamically overwritten ...*/
 }
 
 .search-option {
@@ -69,4 +69,3 @@ body {
   background-size:   20px 20px; 
   text-indent:       20px;
 }
-
