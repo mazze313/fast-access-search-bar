@@ -12,6 +12,14 @@ var html_search_select   = document.querySelector(".outer-wrapper .search-select
 var search_list = [];
 
 
+// STARTPAGE
+var startpage_map = new Map();
+startpage_map.set("search_name",     "startpage [com]");
+startpage_map.set("search_url",      "https://www.startpage.com/do/dsearch?query=%s");
+startpage_map.set("icon_url",        "https://www.startpage.com/sp/cdn/favicons/favicon-144x144.png");
+startpage_map.set("icon_overlay",    "");
+search_list.push(startpage_map);
+
 // METAL ARCHIVES
 var encymetal_com_map = new Map();
 encymetal_com_map.set("search_name",  "encyclopaedia metallum [com]");
@@ -27,14 +35,6 @@ metal_com_map.set("search_url",       "https://www.metal.de/suche/?q=%s");
 metal_com_map.set("icon_url",         "https://www.metal.de/apple-touch-icon.png");
 metal_com_map.set("icon_overlay",     "");
 search_list.push(metal_com_map);
-
-// STARTPAGE
-var startpage_map = new Map();
-startpage_map.set("search_name",     "startpage [com]");
-startpage_map.set("search_url",      "https://www.startpage.com/do/dsearch?query=%s");
-startpage_map.set("icon_url",        "https://www.startpage.com/sp/cdn/favicons/favicon-144x144.png");
-startpage_map.set("icon_overlay",    "");
-search_list.push(startpage_map);
 
 // WIKIPEDIA DE
 var wikipedia_de_map = new Map();
@@ -164,6 +164,8 @@ dictcc_map.set("icon_url",           "https://www4.dict.cc/img/favicons/favicon4
 dictcc_map.set("icon_overlay",       "");
 search_list.push(dictcc_map);
 
+var default_map = startpage_map;
+
 /* ADD CUSTOM SEARCH ENGINE
 /// Replace <NEW> with an unique name of your new search engine.
 /// Replace other <tags> with appropriate content.
@@ -232,7 +234,7 @@ function get_current_search(item) {
   }
   else {
       // Default value
-      apply_current_search(startpage_map);
+      apply_current_search(default_map);
       html_search_select.selectedIndex = 0;
   }
 }
