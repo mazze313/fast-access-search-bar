@@ -11,6 +11,23 @@ var html_search_select   = document.querySelector(".outer-wrapper .search-select
 
 var search_list = [];
 
+
+// METAL ARCHIVES
+var encymetal_com_map = new Map();
+encymetal_com_map.set("search_name",  "encyclopaedia metallum [com]");
+encymetal_com_map.set("search_url",   "https://www.metal-archives.com/search?searchString=%s&type=band_name");
+encymetal_com_map.set("icon_url",     "https://pbs.twimg.com/profile_images/926523450847461376/ctJy92Q9_400x400.jpg");
+encymetal_com_map.set("icon_overlay", "");
+search_list.push(encymetal_com_map);
+
+// METAL
+var metal_com_map = new Map();
+metal_com_map.set("search_name",      "metal [de]");
+metal_com_map.set("search_url",       "https://www.metal.de/suche/?q=%s");
+metal_com_map.set("icon_url",         "https://www.metal.de/apple-touch-icon.png");
+metal_com_map.set("icon_overlay",     "");
+search_list.push(metal_com_map);
+
 // STARTPAGE
 var startpage_map = new Map();
 startpage_map.set("search_name",     "startpage [com]");
@@ -18,22 +35,6 @@ startpage_map.set("search_url",      "https://www.startpage.com/do/dsearch?query
 startpage_map.set("icon_url",        "https://www.startpage.com/sp/cdn/favicons/favicon-144x144.png");
 startpage_map.set("icon_overlay",    "");
 search_list.push(startpage_map);
-
-// DICT.CC
-var dictcc_map = new Map();
-dictcc_map.set("search_name",        "dict.cc [EN <-> DE]");
-dictcc_map.set("search_url",         "https://www.dict.cc/?s=%s");
-dictcc_map.set("icon_url",           "https://www4.dict.cc/img/favicons/favicon4.png");
-dictcc_map.set("icon_overlay",       "");
-search_list.push(dictcc_map);
-
-// LEO
-var leo_map = new Map();
-leo_map.set("search_name",           "leo.org [EN <-> DE]");
-leo_map.set("search_url",            "https://dict.leo.org/german-english/%s");
-leo_map.set("icon_url",              "https://dict.leo.org/img/favicons/ende-32-c9e27561.png");
-leo_map.set("icon_overlay",          "");
-search_list.push(leo_map);
 
 // WIKIPEDIA DE
 var wikipedia_de_map = new Map();
@@ -115,38 +116,6 @@ imdb_com_map.set("icon_url",         "https://m.media-amazon.com/images/G/01/imd
 imdb_com_map.set("icon_overlay",     "");
 search_list.push(imdb_com_map);
 
-// GOOGLE
-var google_com_map = new Map();
-google_com_map.set("search_name",     "google [com]");
-google_com_map.set("search_url",      "https://www.google.de/search?q=%s");
-google_com_map.set("icon_url",        "https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png");
-google_com_map.set("icon_overlay",    "");
-search_list.push(google_com_map);
-
-// DUCKDUCKGO
-var duckduck_com_map = new Map();
-duckduck_com_map.set("search_name",   "duckduckgo [com]");
-duckduck_com_map.set("search_url",    "https://duckduckgo.com/?q=%s");
-duckduck_com_map.set("icon_url",      "https://duckduckgo.com/assets/icons/meta/DDG-iOS-icon_152x152.png");
-duckduck_com_map.set("icon_overlay",  "");
-search_list.push(duckduck_com_map);
-
-// METAL ARCHIVES
-var encymetal_com_map = new Map();
-encymetal_com_map.set("search_name",  "encyclopaedia metallum [com]");
-encymetal_com_map.set("search_url",   "https://www.metal-archives.com/search?searchString=%s&type=band_name");
-encymetal_com_map.set("icon_url",     "https://pbs.twimg.com/profile_images/926523450847461376/ctJy92Q9_400x400.jpg");
-encymetal_com_map.set("icon_overlay", "");
-search_list.push(encymetal_com_map);
-
-// METAL
-var metal_com_map = new Map();
-metal_com_map.set("search_name",      "metal [de]");
-metal_com_map.set("search_url",       "https://www.metal.de/suche/?q=%s");
-metal_com_map.set("icon_url",         "https://www.metal.de/apple-touch-icon.png");
-metal_com_map.set("icon_overlay",     "");
-search_list.push(metal_com_map);
-
 // CPLUSPLUS
 var cplusplus_com_map = new Map();
 cplusplus_com_map.set("search_name",  "cplusplus [com]");
@@ -163,6 +132,37 @@ cppref_com_map.set("icon_url",        "https://en.cppreference.com/favicon.ico")
 cppref_com_map.set("icon_overlay",    "");
 search_list.push(cppref_com_map);
 
+// GOOGLE
+var google_com_map = new Map();
+google_com_map.set("search_name",     "google [com]");
+google_com_map.set("search_url",      "https://www.google.de/search?q=%s");
+google_com_map.set("icon_url",        "https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png");
+google_com_map.set("icon_overlay",    "");
+search_list.push(google_com_map);
+
+// DUCKDUCKGO
+var duckduck_com_map = new Map();
+duckduck_com_map.set("search_name",   "duckduckgo [com]");
+duckduck_com_map.set("search_url",    "https://duckduckgo.com/?q=%s");
+duckduck_com_map.set("icon_url",      "https://duckduckgo.com/assets/icons/meta/DDG-iOS-icon_152x152.png");
+duckduck_com_map.set("icon_overlay",  "");
+search_list.push(duckduck_com_map);
+
+// LEO
+var leo_map = new Map();
+leo_map.set("search_name",           "leo.org [EN <-> DE]");
+leo_map.set("search_url",            "https://dict.leo.org/german-english/%s");
+leo_map.set("icon_url",              "https://dict.leo.org/img/favicons/ende-32-c9e27561.png");
+leo_map.set("icon_overlay",          "");
+search_list.push(leo_map);
+
+// DICT.CC
+var dictcc_map = new Map();
+dictcc_map.set("search_name",        "dict.cc [EN <-> DE]");
+dictcc_map.set("search_url",         "https://www.dict.cc/?s=%s");
+dictcc_map.set("icon_url",           "https://www4.dict.cc/img/favicons/favicon4.png");
+dictcc_map.set("icon_overlay",       "");
+search_list.push(dictcc_map);
 
 /* ADD CUSTOM SEARCH ENGINE
 /// Replace <NEW> with an unique name of your new search engine.
@@ -179,7 +179,7 @@ search_list.push(<NEW>_map);
 */
 
 var search_list_style = "height: %ipx;";
-var search_list_height =  22 * search_list.length;
+var search_list_height =  21 * search_list.length;
 html_search_select.setAttribute("style", search_list_style.replace("%i", search_list_height.toString()));
 
 function set_search_input_focus() {
@@ -290,6 +290,9 @@ function global_onkeydown(event) {
     }    
     on_selection_change();
   }
+  else if (event.keyCode === 37) { // Key: Left
+      html_search_string.value = "";
+  }  
 }
 /// Listener
 document.onkeydown = global_onkeydown;

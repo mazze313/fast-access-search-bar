@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  width:             600px;
+  width:             420px;
   background:      rgb(30, 30, 30);
   margin:            0 auto;
   padding:           2px;  
@@ -60,8 +60,8 @@ body {
 .search-select {
   background:      rgb(44, 44, 44);
   color:           rgb(247, 247, 247);  
-  width:             590px;
-  /*height:            0px; /* Dynamically overwritten ...*/
+  width:             410px;
+  /*height:          0px; /* Dynamically overwritten ...*/
 }
 
 .search-option {
