@@ -23,10 +23,9 @@ You can also test the add-on temporarily by calling *about:debugging#/runtime/th
 ## Usage
 - Open add-on with click on icon in navigation bar or using the shortcut **Alt + Q**.  
   (you can change the shortcut in Firefox via *Tools*/*Add-ons*/Settings Cogwheel/*Manage Extension Shortcut*).  
-- Enter search term and confirm (*Carriage Return* or *Enter*).  
-  New searches are always opened in a new tab.
+- Enter search term and confirm (*Carriage Return* or *Enter*). Delete previously entered search term with *left arrow key*. New searches are always opened in a new tab.
 - Select other predefined search engine with left mouse click or simply use *arrow up* or *arrow down*.  
-  Selection of search engine does not have to be confirmed and is automatically used. 
+  Selection of search engine does not have to be confirmed and is automatically used.
 
 ---
 
