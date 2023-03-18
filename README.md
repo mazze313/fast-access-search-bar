@@ -8,17 +8,17 @@ Provides custom search bar, which can be accessed fast and offers reuse of previ
 ---
 
 ## Install
-**Note:** This plugin has only been tested with Firefox 86.0 (x64) on Ubuntu 20.04 LTS so far.  
+**Note:** This add-on has only been tested with Firefox 111.0 (x64) on Ubuntu 22.04 LTS so far.  
         *Support of other browsers or operating systems is unknown.*
 
-You can also test the add-on temporarily by calling *about:debugging#/runtime/this-firefox* in a new firefox tab. Click *Load Temporary Add-on...* and open *manifest.json* of this plugin.
+Download the 
 
-### Linux
-- Download code and create new *zip* file containing only the files of the sub-folder *fast-access-search-bar*.  
-- Firefox: 
-  - Open *about:config* in new tab and set option *xpinstall.signatures.required* to *false*.
-  - Open *Tools*/*Add-ons* and click on cogwheel for further settings.   
-    Click *Install Add-on From File...* and select previously created *zip* file of add-on.  
+### Debug Testing
+- Download and extract code to any folder
+- Open Firefox: 
+  - Open *about:config* in new tab and set option *xpinstall.signatures.required* to *false*
+  - Open *about:debugging#/runtime/this-firefox*
+  - Click on *Load Temporary Add-on* and select manifest.json from add-on folder
 
 ## Usage
 - Open add-on with click on icon in navigation bar or using the shortcut **Alt + Q**. You can change the shortcut in Firefox via *Tools*/*Add-ons*/Settings Cogwheel/*Manage Extension Shortcut*.
@@ -28,4 +28,5 @@ You can also test the add-on temporarily by calling *about:debugging#/runtime/th
 ---
 
 ## Add further search engines
-Open *fast-access-search-bar.js* and see description at line stating *ADD CUSTOM SEARCH ENGINE*.
+Open the file *searches.json* with any text editor and add a new entry for a new search.
+Searches are listed in the add-on as they appear in the JSON file.

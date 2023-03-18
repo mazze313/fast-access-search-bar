@@ -1,0 +1,112 @@
+{
+	"startpage [com]": {
+		"search_url": "https://www.startpage.com/do/dsearch?query=%s",
+		"icon_url": "https://www.startpage.com/sp/cdn/favicons/favicon-144x144.png",
+		"icon_overlay": " "
+	},
+	"encyclopaedia metallum [com]": {
+		"search_url": "https://www.metal-archives.com/search?searchString=%s&type=band_name",
+		"icon_url": "https://cdn-images.threadless.com/threadless-media/artist_shops/shops/metalarchives/profile/logo-1666120096-eaffb89379bee4870e3e18f4e7da2044.jpg",
+		"icon_overlay": ""
+	},
+	"metal [de]": {
+		"search_url": "https://www.metal.de/suche/?q=%s",
+		"icon_url": "https://www.metal.de/apple-touch-icon.png",
+		"icon_overlay": ""
+	},
+	"wikipedia [DE]": {
+		"search_url": "https://de.wikipedia.org/w/index.php?search=%s",
+		"icon_url": "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/263px-Wikipedia-logo-v2.svg.png",
+		"icon_overlay": "DE"
+	},
+	"wikipedia [EN]": {
+		"search_url": "https://en.wikipedia.org/wiki/Special:Search?search=%s",
+		"icon_url": "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/263px-Wikipedia-logo-v2.svg.png",
+		"icon_overlay": "EN"
+	},
+	"meta preisvergleich": {
+		"search_url": "https://meta-preisvergleich.de/index.cgi?q=%s",
+		"icon_url": "https://meta-preisvergleich.de/icon192t.png",
+		"icon_overlay": ""
+	},
+	"scamadviser": {
+		"search_url": "https://www.scamadviser.com/check-website/%s",
+		"icon_url": "https://www.scamadviser.com/images/static/favicon/favicon-32x32.png",
+		"icon_overlay": ""
+	},
+	"ebay [de]": {
+		"search_url": "https://www.ebay.de/sch/i.html?_nkw=%s&_sacat=0",
+		"icon_url": "https://cdn.icon-icons.com/icons2/729/PNG/512/ebay_icon-icons.com_62730.png",
+		"icon_overlay": "DE"
+	},
+	"ebay [com]": {
+		"search_url": "https://www.ebay.com/sch/i.html?_nkw=%s&_sacat=0",
+		"icon_url": "https://cdn.icon-icons.com/icons2/729/PNG/512/ebay_icon-icons.com_62730.png",
+		"icon_overlay": "COM"
+	},
+	"ebay [uk]": {
+		"search_url": "https://www.ebay.co.uk/sch/i.html?_nkw=%s&_sacat=0",
+		"icon_url": "https://cdn.icon-icons.com/icons2/729/PNG/512/ebay_icon-icons.com_62730.png",
+		"icon_overlay": "UK"
+	},
+	"amazon [de]": {
+		"search_url": "https://www.amazon.de/s?k=%s",
+		"icon_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Amazon_icon.png",
+		"icon_overlay": "DE"
+	},
+	"amazon [com]": {
+		"search_url": "https://www.amazon.com/s?k=%s",
+		"icon_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Amazon_icon.png",
+		"icon_overlay": "COM"
+	},
+	"idealo [de]": {
+		"search_url": "https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q=%s",
+		"icon_url": "https://cdn.idealo.com/storage/ipc/favicon.ico",
+		"icon_overlay": ""
+	},
+	"youtube [com]": {
+		"search_url": "https://www.youtube.com/results?search_query=%s",
+		"icon_url": "https://www.youtube.com/s/desktop/4fc9328c/img/favicon_144.png",
+		"icon_overlay": ""
+	},
+	"imdb [com]": {
+		"search_url": "https://www.imdb.com/find?q=%s",
+		"icon_url": "https://m.media-amazon.com/images/G/01/imdb/images-ANDW73HA/favicon_iPhone_retina_180x180._CB1582158069_.png",
+		"icon_overlay": ""
+	},
+	"cplusplus [com]": {
+		"search_url": "https://www.cplusplus.com/search.do?q=%s",
+		"icon_url": "https://www.cplusplus.com/favicon.ico",
+		"icon_overlay": ""
+	},
+	"cppreference [com]": {
+		"search_url": "https://duckduckgo.com/?sites=cppreference.com&q=%s",
+		"icon_url": "https://en.cppreference.com/favicon.ico",
+		"icon_overlay": ""
+	},
+	"google [com]": {
+		"search_url": "https://www.google.de/search?q=%s",
+		"icon_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png",
+		"icon_overlay": ""
+	},
+	"duckduckgo [com]": {
+		"search_url": "https://duckduckgo.com/?q=%s",
+		"icon_url": "https://duckduckgo.com/assets/icons/meta/DDG-iOS-icon_152x152.png",
+		"icon_overlay": ""
+	},
+	"leo.org [EN <-> DE]": {
+		"search_url": "https://dict.leo.org/german-english/%s",
+		"icon_url": "https://dict.leo.org/img/favicons/ende-32-c9e27561.png",
+		"icon_overlay": ""
+	},
+	"dict.cc [EN <-> DE]": {
+		"search_url": "https://www.dict.cc/?s=%s",
+		"icon_url": "https://www4.dict.cc/img/favicons/favicon4.png",
+		"icon_overlay": ""
+	},
+    "hautschutzengel [de]": {
+		"search_url": "https://www.hautschutzengel.de/search?q=%s",
+		"icon_url": "https://www.hautschutzengel.de/img/media/layout/favicon144x144.png",
+		"icon_overlay": ""
+	}    
+}
