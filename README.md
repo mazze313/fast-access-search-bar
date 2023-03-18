@@ -22,9 +22,11 @@ Download the XPI file of the latest release. In the add-on menu of Firefox, clic
 **Note:** This add-on has only been tested with Firefox 111.0 (x64) on Ubuntu 22.04 LTS so far. 
 
 ## Usage
-- Open add-on with click on icon in navigation bar or using the shortcut **Alt + Q**. You can change the shortcut in Firefox via *Tools*/*Add-ons*/Settings Cogwheel/*Manage Extension Shortcut*.
-- Enter search term and confirm (*Carriage Return* or *Enter*). Delete previously entered search term with *left arrow key*. New searches are always opened in a new tab.
-- Select other predefined search engine with left mouse click or simply use *arrow up* or *arrow down*. Selection of search engine does not have to be confirmed and is automatically used.
+- Open add-on with a click on the new magnifier icon in the navigation bar or by using the shortcut **Alt + Q**. 
+  You can change the shortcut in Firefox via *Tools*/*Add-ons*/Settings Cogwheel/*Manage Extension Shortcut*.
+- Enter a new search term and confirm (*Carriage Return* or *Enter*). New searches are always opened in a new tab.
+- Select other predefined search engine with left mouse click or simply use *arrow up* or *arrow down*. 
+  Selection of search engine does not have to be confirmed and is automatically used.
 
 ---
 
