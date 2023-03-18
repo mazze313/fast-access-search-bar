@@ -8,17 +8,18 @@ Provides custom search bar, which can be accessed fast and offers reuse of previ
 ---
 
 ## Install
-**Note:** This add-on has only been tested with Firefox 111.0 (x64) on Ubuntu 22.04 LTS so far.  
-        *Support of other browsers or operating systems is unknown.*
 
-Download the 
+Download the XPI file of the latest release. In the add-on menu of Firefox, click the cogwheel and select *Install Add-on from File...*. 
 
 ### Debug Testing
-- Download and extract code to any folder
+
+- Download the code and extract it if downloaded as zip file.
 - Open Firefox: 
   - Open *about:config* in new tab and set option *xpinstall.signatures.required* to *false*
   - Open *about:debugging#/runtime/this-firefox*
   - Click on *Load Temporary Add-on* and select manifest.json from add-on folder
+
+**Note:** This add-on has only been tested with Firefox 111.0 (x64) on Ubuntu 22.04 LTS so far. 
 
 ## Usage
 - Open add-on with click on icon in navigation bar or using the shortcut **Alt + Q**. You can change the shortcut in Firefox via *Tools*/*Add-ons*/Settings Cogwheel/*Manage Extension Shortcut*.
