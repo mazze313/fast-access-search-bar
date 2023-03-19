@@ -5,6 +5,7 @@ var html_search_icon     = document.querySelector(".outer-wrapper .search-icon")
 var html_overlay_text    = document.querySelector(".outer-wrapper .overlay-text"); // div
 var html_search_string   = document.querySelector(".outer-wrapper .search-string"); // input
 var html_search_select   = document.querySelector(".outer-wrapper .search-select"); // select
+var html_delete_search   = document.querySelector(".outer-wrapper .delete-icon"); // delete
 
 /* ************************************************************************* */ 
 // Listener
@@ -16,6 +17,7 @@ let input_search_string_item = browser.storage.local.get("search_string");
 input_search_string_item.then(get_input_search_string, on_error_input_search_string);
 let current_search_map_item = browser.storage.local.get("search_current");
 current_search_map_item.then(get_current_search, on_error_current_search);
+html_delete_search.onclick = delete_search_text;
 
 /* ************************************************************************* */ 
 // Init search list
@@ -83,6 +85,11 @@ function on_error_input_search_string(error) {
     console.log(error);
 }
 
+function delete_search_text() {
+    html_search_string.value = "";
+    html_search_string.focus();
+}
+
 /* ************************************************************************* */ 
 // Set current search
 
@@ -90,7 +97,6 @@ function apply_current_search(map) {
     search_url              = map.get("search_url");
     html_search_icon.src    = map.get("icon_url");
     html_search_icon.alt    = map.get("search_name");
-    html_search_icon.title  = map.get("search_name");
     html_search_icon.title  = map.get("search_name");
     html_overlay_text.textContent  = map.get("icon_overlay");
     set_search_input_focus();
