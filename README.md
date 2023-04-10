@@ -29,8 +29,11 @@ Download the XPI file of the latest release. In the add-on menu of Firefox, clic
   Selection of search engine does not have to be confirmed and is automatically used.
 - Clear the input field by clicking on the `x` button on the right or with the shortcut **Alt + x**.
 
+<!-- 
 ---
 
 ## Add further search engines
 Open the file *searches.json* with any text editor and add a new entry for a new search.
 Searches are listed in the add-on as they appear in the JSON file.
+
+-->
