@@ -11,13 +11,22 @@ var html_delete_search   = document.querySelector(".outer-wrapper .delete-icon")
 // Listener
 
 html_search_select.onclick = on_selection_change;
-document.onkeydown = global_onkeydown;
-document.onkeyup = global_onkeyup;
-let input_search_string_item = browser.storage.local.get("search_string");
-input_search_string_item.then(get_input_search_string, on_error_input_search_string);
-let current_search_map_item = browser.storage.local.get("search_current");
-current_search_map_item.then(get_current_search, on_error_current_search);
 html_delete_search.onclick = delete_search_text;
+document.onkeydown         = global_onkeydown;
+document.onkeyup           = global_onkeyup;
+
+let storage_search_string = browser.storage.local.get("search_string");
+storage_search_string.then(event_storage_search_string, on_error_storage);
+
+let storage_search_map_entry = browser.storage.local.get("search_map_entry");
+storage_search_map_entry.then(event_storage_search_map_entry, on_error_storage);
+
+let storage_search_config_path = browser.storage.local.get("search_config_path");
+storage_search_config_path.then(event_storage_search_config_path, on_error_storage);
+
+function on_error_storage(error) { 
+    console.log(error);
+}
 
 /* ************************************************************************* */ 
 // Init search list
@@ -32,35 +41,35 @@ function load_searches() {
             return response.json(); 
         })
         .then((json) => {
-            console.log(json);
             searches = [];
             for (const key in json){
                 if(json.hasOwnProperty(key))
                 {            
                     var search_data = json[key];
-                    var new_search = new Map();
-                    new_search.set("search_name",     key);
-                    new_search.set("search_url",      search_data.search_url);
-                    new_search.set("icon_url",        search_data.icon_url);
-                    new_search.set("icon_overlay",    search_data.icon_overlay);
-                    searches.push(new_search);
+                    var search_entry  = new Map();
+                    search_entry.set("search_name",  key);
+                    search_entry.set("search_url",   search_data.search_url);
+                    search_entry.set("icon_url",     search_data.icon_url);
+                    search_entry.set("icon_overlay", search_data.icon_overlay);
+                    searches.push(search_entry);
                 }
             }
 
-            var searches_style = "height: %ipx;";
-            var searches_height =  20 * searches.length;
-            html_search_select.setAttribute("style", searches_style.replace("%i", searches_height.toString()));
+            var search_select_style  = "height: %ipx;";
+            var search_select_height =  20 * searches.length;
+            html_search_select.setAttribute("style", search_select_style.replace("%i", search_select_height.toString()));
 
             var array_length = searches.length;
             for (var i = 0; i < array_length; i++) {
-                html_list_search(searches[i])
+                html_list_search(searches[i]);
             }
         });
 }
 load_searches();
 
+
 /* ************************************************************************* */ 
-// Set search string input value
+// Search String 
 
 function set_search_input_focus() {
     var len = html_search_string.value.length; 
@@ -70,57 +79,70 @@ function set_search_input_focus() {
     }  
 }
 
-function get_input_search_string(item) {
+function event_storage_search_string(item) {
     if (item.search_string !== undefined) {
         html_search_string.value = item.search_string.value;
     }
     else {
-        // Default value
         html_search_string.value = "";
     }
     html_search_string.focus();
 }
 
-function on_error_input_search_string(error) { 
-    console.log(error);
-}
-
 function delete_search_text() {
     html_search_string.value = "";
     html_search_string.focus();
+    browser.storage.local.set({ "search_string" : { "value" : "" }});
 }
 
-/* ************************************************************************* */ 
-// Set current search
 
-function apply_current_search(map) {
-    search_url              = map.get("search_url");
-    html_search_icon.src    = map.get("icon_url");
-    html_search_icon.alt    = map.get("search_name");
-    html_search_icon.title  = map.get("search_name");
+/* ************************************************************************* */ 
+// Search Entry
+
+function apply_search(map) {
+    search_url                     = map.get("search_url");
+    html_search_icon.src           = map.get("icon_url");
+    html_search_icon.alt           = map.get("search_name");
+    html_search_icon.title         = map.get("search_name");
     html_overlay_text.textContent  = map.get("icon_overlay");
     set_search_input_focus();
+    set_search_index(map);
 }
 
-function get_current_search(item) {
-  if (item.search_current !== undefined) {
-      apply_current_search(item.search_current.value)
+function event_storage_search_map_entry(item) {
+  if (item.search_map_entry !== undefined) {
+      apply_search(item.search_map_entry.value);
   }
   else {
-      // Default value
-      if (searches.length > 0) {
-        apply_current_search(searches[1]);
-        html_search_select.selectedIndex = 0;
-      }
+      apply_search(searches[0]);
   }
 }
 
-function on_error_current_search(error) {
-    console.log(error);    
-}
 
 /* ************************************************************************* */ 
-// Create html search selection options 
+// Search Config Path
+
+function event_storage_search_config_path(item) {
+    if (item.search_config_path !== undefined) {
+        var search_config_path = item.search_config_path.value;
+        
+    }
+    else {
+
+        
+    }
+}
+
+function set_storage_search_config_path(config_path) {
+
+
+
+
+}
+
+
+/* ************************************************************************* */ 
+// Html search selection options 
 
 function html_list_search(map) {
     var option_image      = "background-image: url(%i);"
@@ -135,33 +157,43 @@ function on_selection_change() {
   var array_length = searches.length;
   for (var i = 0; i < array_length; i++) {
       if (searches[i].get("search_name") === html_search_select.value) {
-          apply_current_search(searches[i])
-          browser.storage.local.set({ "search_current" : { "value" : searches[i] }});
+          apply_search(searches[i]);
+          browser.storage.local.set({ "search_map_entry" : { "value" : searches[i] }});
       }
   }
 }
 
+function set_search_index(map) {
+    var array_length = searches.length;
+    for (var i = 0; i < array_length; i++) {
+        if (searches[i].get("search_name") === map.get("search_name")) {
+            html_search_select.selectedIndex = i;
+        }
+    }
+}
+
+
 /* ************************************************************************* */ 
-// Process global key events to change selection index
+// Global key events to change selection index
 
 function global_onkeydown(event) {
-  if (event.keyCode === 40) { // Key: Down
-      html_search_select.selectedIndex++;
-      if (html_search_select.selectedIndex < 0) {
-          html_search_select.selectedIndex = 0;
-      }
-      on_selection_change();
-  }
-  else if (event.keyCode === 38) { // Key: Up
+    if (event.keyCode === 40) { // Key: Down
+        html_search_select.selectedIndex++;
+        if (html_search_select.selectedIndex < 0) {
+            html_search_select.selectedIndex = 0;
+        }
+        on_selection_change();
+    }
+    else if (event.keyCode === 38) { // Key: Up
     html_search_select.selectedIndex--;
     if (html_search_select.selectedIndex < 0) {
         html_search_select.selectedIndex = html_search_select.length - 1;
     }    
     on_selection_change();
-  }
-  //else if (event.keyCode === 37) { // Key: Left
-  //    html_search_string.value = "";
-  //}  
+    }
+    else if (event.altKey && (event.keyCode === 88)) { // Key: Alt + x
+        delete_search_text();
+    }  
 }
 
 function global_onkeyup(event) {
@@ -171,8 +203,9 @@ function global_onkeyup(event) {
     }
 }
 
+
 /* ************************************************************************* */ 
-// Process search request on keypress in text input field
+// Search request on keypress in text input field
 
 /// Listener
 html_search_string.addEventListener("keyup", function(event) {

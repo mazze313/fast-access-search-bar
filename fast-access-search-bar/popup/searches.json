@@ -2,7 +2,7 @@
 	"startpage [com]": {
 		"search_url": "https://www.startpage.com/do/dsearch?query=%s",
 		"icon_url": "https://www.startpage.com/sp/cdn/favicons/favicon-144x144.png",
-		"icon_overlay": " "
+		"icon_overlay": ""
 	},
 	"encyclopaedia metallum [com]": {
 		"search_url": "https://www.metal-archives.com/search?searchString=%s&type=band_name",
@@ -108,5 +108,5 @@
 		"search_url": "https://www.hautschutzengel.de/search?q=%s",
 		"icon_url": "https://www.hautschutzengel.de/img/media/layout/favicon144x144.png",
 		"icon_overlay": ""
-	}    
+	}   
 }
