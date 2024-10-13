@@ -1,11 +1,14 @@
 /* ************************************************************************* */ 
 // Get html elements
 
-var html_search_icon     = document.querySelector(".outer-wrapper .search-icon"); // img
-var html_overlay_text    = document.querySelector(".outer-wrapper .overlay-text"); // div
-var html_search_string   = document.querySelector(".outer-wrapper .search-string"); // input
-var html_search_select   = document.querySelector(".outer-wrapper .search-select"); // select
-var html_delete_search   = document.querySelector(".outer-wrapper .delete-icon"); // delete
+const html_search_icon     = document.querySelector(".outer-wrapper .search-icon"); 
+const html_overlay_text    = document.querySelector(".outer-wrapper .overlay-text"); 
+const html_search_string   = document.querySelector(".outer-wrapper .search-string"); 
+const html_search_select   = document.querySelector(".outer-wrapper .search-select");
+const html_delete_search   = document.querySelector(".outer-wrapper .delete-icon");
+const html_file_dialog     = document.querySelector(".outer-wrapper .file-wrapper .file-dialog");
+const html_file_button     = document.querySelector(".outer-wrapper .file-wrapper .file-button"); 
+const html_file_preview     = document.querySelector(".outer-wrapper .file-wrapper .file-preview"); 
 
 /* ************************************************************************* */ 
 // Listener
@@ -56,7 +59,7 @@ function load_searches() {
             }
 
             var search_select_style  = "height: %ipx;";
-            var search_select_height =  20 * searches.length;
+            var search_select_height =  (20 * searches.length);
             html_search_select.setAttribute("style", search_select_style.replace("%i", search_select_height.toString()));
 
             var array_length = searches.length;
@@ -125,7 +128,7 @@ function event_storage_search_map_entry(item) {
 function event_storage_search_config_path(item) {
     if (item.search_config_path !== undefined) {
         var search_config_path = item.search_config_path.value;
-        
+        html_file_preview.textContent = search_config_path;
     }
     else {
 
@@ -134,10 +137,7 @@ function event_storage_search_config_path(item) {
 }
 
 function set_storage_search_config_path(config_path) {
-
-
-
-
+    browser.storage.local.set({ "search_config_path" : { "value" : config_path }});
 }
 
 
@@ -212,7 +212,8 @@ html_search_string.addEventListener("keyup", function(event) {
     // "Carriage Return" and "Enter"
     if ((event.keyCode === 13) || (event.keyCode === 10)) {
         // Insert search term into search url of selected search and open search URL in new tab
-        browser.tabs.create({ url: browser.runtime.getURL(search_url.replace("%s", html_search_string.value)) });
+        var url_string = search_url.replace("%s", html_search_string.value);
+        browser.tabs.create({ url: url_string });
         // Close pop-up
         window.close();
     }
@@ -222,5 +223,21 @@ html_search_string.addEventListener("keyup", function(event) {
 html_search_string.addEventListener("change", function(event) {
     browser.storage.local.set({ "search_string" : { "value" : html_search_string.value }});
 });
+
+/// Listener
+html_file_button.addEventListener("click", function(event) {
+      if (html_file_dialog) {
+        html_file_dialog.click();
+      }
+    },
+    false
+);
+
+/// Listener
+html_file_dialog.addEventListener("change", function() {
+        set_storage_search_config_path(this.files[0]);
+    },
+    false
+);
 
 /* ************************************************************************* */ 
