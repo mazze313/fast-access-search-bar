@@ -3,7 +3,8 @@
 ## Description
 Provides custom search bar, which can be accessed fast and offers reuse of previous search term for other predefined search engines.
 
-<img src="https://user-images.githubusercontent.com/81079563/226198407-318ee35c-582c-419a-9d1f-4aae338888a4.png" width="500">
+![screen](https://github.com/user-attachments/assets/43d1c07e-b1f6-4865-8be8-191312b6496d)
+
 
 ---
 
